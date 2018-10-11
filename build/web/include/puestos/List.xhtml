@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListPuestosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListPuestosEmpty}" rendered="#{puestosController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{puestosController.items.rowCount > 0}">
+                    <h:outputText value="#{puestosController.pagination.pageFirstItem + 1}..#{puestosController.pagination.pageLastItem + 1}/#{puestosController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{puestosController.previous}" value="#{bundle.Previous} #{puestosController.pagination.pageSize}" rendered="#{puestosController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{puestosController.next}" value="#{bundle.Next} #{puestosController.pagination.pageSize}" rendered="#{puestosController.pagination.hasNextPage}"/>&nbsp;
+                   
+                    
+                    <h:dataTable value="#{puestosController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        
+                        
+                   
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPuestosTitle_puesto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.puesto}"/>
+                        </h:column>
+                        
+                      
+                        
+                     
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPuestosTitle_salarioMinimo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.salarioMinimo}"/>
+                        </h:column>
+                        
+                        
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPuestosTitle_salarioMaximo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.salarioMaximo}"/>
+                        </h:column>
+                        
+                        
+                        
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPuestosTitle_departamento}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.departamento}"/>
+                        </h:column>
+                        
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPuestosTitle_niveldeRiesgo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.niveldeRiesgo}"/>
+                        </h:column>
+                        
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPuestosTitle_estado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estado}"/>
+                        </h:column>
+                        
+                        
+                        
+                        
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{puestosController.prepareView}" value="#{bundle.ListPuestosViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{puestosController.prepareEdit}" value="#{bundle.ListPuestosEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{puestosController.destroy}" value="#{bundle.ListPuestosDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{puestosController.prepareCreate}" value="#{bundle.ListPuestosCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListPuestosIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

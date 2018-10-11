@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditNivelDeRiesgoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditNivelDeRiesgoLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{nivelDeRiesgoController.selected.id}" title="#{bundle.EditNivelDeRiesgoTitle_id}" required="true" requiredMessage="#{bundle.EditNivelDeRiesgoRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditNivelDeRiesgoLabel_niveldeRiesgo}" for="niveldeRiesgo" />
+                    <h:inputText id="niveldeRiesgo" value="#{nivelDeRiesgoController.selected.niveldeRiesgo}" title="#{bundle.EditNivelDeRiesgoTitle_niveldeRiesgo}" required="true" requiredMessage="#{bundle.EditNivelDeRiesgoRequiredMessage_niveldeRiesgo}"/>
+                    <h:outputLabel value="#{bundle.EditNivelDeRiesgoLabel_estado}" for="estado" />
+                    <h:selectOneMenu id="estado" value="#{nivelDeRiesgoController.selected.estado}" title="#{bundle.EditNivelDeRiesgoTitle_estado}" >
+                        <f:selectItems value="#{estadoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{nivelDeRiesgoController.update}" value="#{bundle.EditNivelDeRiesgoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditNivelDeRiesgoViewLink}"/>
+                <br />
+                <h:commandLink action="#{nivelDeRiesgoController.prepareList}" value="#{bundle.EditNivelDeRiesgoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditNivelDeRiesgoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

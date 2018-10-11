@@ -1,0 +1,513 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>RRHH</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta charset="UTF-8"></meta>
+        <meta name="keywords" content="Seeking Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+              Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Custom Theme files -->
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'/>
+        <!--font-Awesome-->
+        <link href="css/font-awesome.css" rel="stylesheet"/> 
+        <!--font-Awesome-->
+
+        <link rel="stylesheet" href="css/style.css"/>
+    </h:head>
+    <h:body>
+        <!--NavBar App dehaze-->
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.xhtml"><img src="images/logo.png" alt="" style="width:50%"/></a>
+                </div>
+                <!--navbar-header-->
+                <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 1px;">
+                    <ul class="nav navbar-nav">
+
+                        <!--<li><a href="about.xhtml">Sobre Nosotros</a></li>-->
+                        <!--<li><a href="login.xhtml">Login</a></li>-->
+                        <!--<li><a href="register.xhtml">Registro</a></li>-->
+
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <!--navbar-collapse-->
+        </nav>
+        <div class="container-fluid">
+            <div class="banner_1">
+                <div class="container">
+                    <div id="search_wrapper1">
+                        <div id="search_form" class="clearfix">
+                            <br/>
+                            <h1>Bienvenido Administrador!</h1>
+                        </div>
+                    </div>
+                </div> 
+            </div>	
+            <br/>
+            <div class="row">
+                <div class="col-md-6" style="width: 164px;">
+                    <div class="list-group" id="myList" role="tablist" >
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#profile"  role="tab">Empleados</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#home"     role="tab">Candidatos</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#competencias_postulantes" role="tab">Competencias</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#puestosss" role="tab">Puestos</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#departamento" role="tab">Departamentos</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#language" role="tab">Idiomas</a>
+                    </div>
+                </div>
+                <div class="col-md-10" >
+                    <div class="tab-content">
+
+                        <div class="tab-pane" id="home" role="tabpanel">
+
+                            <h:form>
+
+                                <p:inputText id="cedula2" class="input-number-motherfucker" placeholder="Introducir Id" value="#{procesoController.id}"/>
+                                <h:commandButton action="#{procesoController.gemaDelInfinito()}"  class="btn btn-sm btn-success" value="Convertir">
+
+                                </h:commandButton>
+                                <br/>
+                                <br/>
+                                <h:outputText escape="false" value="#{bundle.ListCandidatosEmpty}" rendered="#{candidatosController.items.rowCount == 0}"/>
+                                <h:panelGroup rendered="#{candidatosController.items.rowCount > 0}">
+                                    <h:outputText value="#{candidatosController.pagination.pageFirstItem + 1}..#{candidatosController.pagination.pageLastItem + 1}/#{candidatosController.pagination.itemsCount}"/>&nbsp;
+                                    <h:commandLink action="#{candidatosController.previous}" value="#{bundle.Previous} #{candidatosController.pagination.pageSize}" rendered="#{candidatosController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink action="#{candidatosController.next}" value="#{bundle.Next} #{candidatosController.pagination.pageSize}" rendered="#{candidatosController.pagination.hasNextPage}"/>&nbsp;
+                                    
+                                    <h:dataTable id="candidatoTable" value="#{candidatosController.items}" var="item" class="table  table-hover  table-borderless">
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Id"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.id}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Cedula"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.cedula}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Nombre"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.nombre}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Salario Aspirado"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.salarioAspira}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Recomendacion"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.recomendadoPor}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Puesto Aspirado"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.puestoAspira.puesto}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Competencia"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.competencias.competencia}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Idioma"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idiomas.idioma}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Estado"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.estadoCandidato.descripcion}"/>
+                                        </h:column>
+                                        <!--
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="&nbsp;"/>
+                                            </f:facet>
+                                            <h:commandLink class="btn btn-sm btn-danger" action="#{candidatosController.destroy}" value="Eliminar candidato"/>
+                                            <h:outputText value=" "/>
+                                        </h:column>
+                                        -->
+                                    </h:dataTable>
+                                </h:panelGroup>
+
+                            </h:form>
+
+                        </div>
+
+                        <div class="tab-pane" id="profile" role="tabpanel">
+
+                            <h:form>
+
+                                <br/>
+                                <h:outputText escape="false" value="#{bundle.ListEmpleadoEmpty}" rendered="#{empleadoController.items.rowCount == 0}"/>
+                                <h:panelGroup rendered="#{empleadoController.items.rowCount > 0}">
+                                    <h:outputText value="#{empleadoController.pagination.pageFirstItem + 1}..#{empleadoController.pagination.pageLastItem + 1}/#{empleadoController.pagination.itemsCount}"/>&nbsp;
+                                    <h:commandLink action="#{empleadoController.previous}" value="#{bundle.Previous} #{empleadoController.pagination.pageSize}" rendered="#{empleadoController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink action="#{empleadoController.next}" value="#{bundle.Next} #{empleadoController.pagination.pageSize}" rendered="#{empleadoController.pagination.hasNextPage}"/>&nbsp;
+                                    <br/>
+                                    <br/>
+                                    <p:panelGrid columns="4">
+                                        <p:column>
+                                            <h:commandLink>
+                                                <p:graphicImage url="/images/excel.png" class="responsive" width="24"/>
+                                                <p:dataExporter type="xls" target="tbl" fileName="Empleados Excel" />
+                                            </h:commandLink>
+
+                                        </p:column>
+                                        <p:column>
+                                            <h:commandLink>
+                                                <p:graphicImage url="/images/pdf.png" class="responsive" width="24"/>
+                                                <p:dataExporter type="pdf" target="tbl" fileName="Empleados PDF" pageOnly="false" />
+                                            </h:commandLink>
+
+                                        </p:column>
+                                        <p:column>
+                                            <h:commandLink>
+                                                <p:graphicImage url="/images/csv_1.png" class="responsive" width="24"/>
+                                                <p:dataExporter type="csv" target="tbl" fileName="Empleados CSV" />
+                                            </h:commandLink>
+
+                                        </p:column>
+
+                                        <h:commandLink>
+                                            <p:graphicImage url="/images/xml.svg" class="responsive" width="24"/>
+                                            <p:dataExporter type="xml" target="tbl" fileName="Empleados XML" />
+                                        </h:commandLink>
+                                    </p:panelGrid>
+                                    <br/>
+                                    <br/>
+
+                                    <p:dataTable id="tbl" value="#{empleadoController.items}" var="item" style="border: 0; border-color: white;" class="table table-borderless table-hover">
+
+                                        <p:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Cedula"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.cedula}"/>
+                                        </p:column>
+
+                                        <p:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Nombre"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.nombre}"/>
+                                        </p:column>
+
+                                        <p:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Fecha de Ingreso"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.fechaIngreso}">
+                                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                            </h:outputText>
+                                        </p:column>
+
+                                        <p:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Salario"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.salarioMensual}"/>
+                                        </p:column>
+
+                                        <p:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Puesto"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.puesto.puesto}"/>
+                                        </p:column>
+
+                                    </p:dataTable>
+                                </h:panelGroup>
+                            </h:form>
+
+                        </div>
+
+                        <div class="tab-pane" id="competencias_postulantes" role="tabpanel">
+
+                            <h:form>
+                                <br/>
+                                <br/>
+                                <h:outputText escape="false" value="#{bundle.ListCompetenciasEmpty}" rendered="#{competenciasController.items.rowCount == 0}"/>
+                                <h:panelGroup rendered="#{competenciasController.items.rowCount > 0}">
+                                    <h:outputText value="#{competenciasController.pagination.pageFirstItem + 1}..#{competenciasController.pagination.pageLastItem + 1}/#{competenciasController.pagination.itemsCount}"/>&nbsp;
+                                    <h:commandLink action="#{competenciasController.previous}" value="#{bundle.Previous} #{competenciasController.pagination.pageSize}" rendered="#{competenciasController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink action="#{competenciasController.next}" value="#{bundle.Next} #{competenciasController.pagination.pageSize}" rendered="#{competenciasController.pagination.hasNextPage}"/>&nbsp;
+
+                                    <h:dataTable id="competenciasTable" value="#{competenciasController.items}" var="item" class="table  table-hover  table-borderless">
+
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListCompetenciasTitle_competencia}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.competencia}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListCompetenciasTitle_estado}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.estado.descripcion}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Editar"/>
+                                            </f:facet>
+                                            <h:commandLink class="btn btn-warning" action="#{competenciasController.prepareEdit}" value="Editar Competencia"/>                                            
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Eliminar"/>
+                                            </f:facet>
+                                            <h:commandLink class="btn btn-danger" action="#{competenciasController.destroy}" value="Borrar Competencia"/>
+                                        </h:column>
+
+
+
+                                    </h:dataTable>
+                                    <h:commandLink class="btn btn-success" action="#{competenciasController.prepareCreate}" value="Añadir Competencias"/>
+
+                                </h:panelGroup>
+
+
+
+                            </h:form>
+
+                        </div>
+
+                        <div class="tab-pane" id="puestosss" role="tabpanel">
+
+                            <h:form>
+                                <h:outputText escape="false" value="#{bundle.ListPuestosEmpty}" rendered="#{puestosController.items.rowCount == 0}"/>
+                                <h:panelGroup rendered="#{puestosController.items.rowCount > 0}">
+                                    <h:outputText value="#{puestosController.pagination.pageFirstItem + 1}..#{puestosController.pagination.pageLastItem + 1}/#{puestosController.pagination.itemsCount}"/>&nbsp;
+                                    <h:commandLink action="#{puestosController.previous}" value="#{bundle.Previous} #{puestosController.pagination.pageSize}" rendered="#{puestosController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink action="#{puestosController.next}" value="#{bundle.Next} #{puestosController.pagination.pageSize}" rendered="#{puestosController.pagination.hasNextPage}"/>&nbsp;
+
+                                    <h:dataTable id="puestoTables" value="#{puestosController.items}" var="item" class="table  table-hover  table-borderless">
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListPuestosTitle_puesto}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.puesto}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListPuestosTitle_salarioMinimo}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.salarioMinimo}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListPuestosTitle_salarioMaximo}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.salarioMaximo}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListPuestosTitle_departamento}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.departamento.descripcion}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListPuestosTitle_niveldeRiesgo}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.niveldeRiesgo.niveldeRiesgo}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListPuestosTitle_estado}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.estado.descripcion}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Editar"/>
+                                            </f:facet>
+                                            <h:commandLink class="btn btn-warning" action="#{puestosController.prepareEdit}" value="Editar Puesto"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Eliminar"/>
+                                            </f:facet>
+                                            <h:commandLink class="btn btn-danger" action="#{puestosController.destroy}" value="Borrar Puesto"/>
+                                        </h:column>
+                                    </h:dataTable>
+
+                                    <h:commandLink class="btn btn-success" action="#{puestosController.prepareCreate}" value="Añadir Puestos"/>
+                                </h:panelGroup>
+                            </h:form>
+
+                        </div>
+
+                        <div class="tab-pane" id="departamento" role="tabpanel">
+
+                            <h:form>
+                                <h:panelGroup rendered="#{departamentoController.items.rowCount > 0}">
+                                    <h:outputText value="#{departamentoController.pagination.pageFirstItem + 1}..#{departamentoController.pagination.pageLastItem + 1}/#{departamentoController.pagination.itemsCount}"/>&nbsp;
+                                    <h:commandLink action="#{departamentoController.previous}" value="#{bundle.Previous} #{departamentoController.pagination.pageSize}" rendered="#{departamentoController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink action="#{departamentoController.next}" value="#{bundle.Next} #{departamentoController.pagination.pageSize}" rendered="#{departamentoController.pagination.hasNextPage}"/>&nbsp;
+                                    <h:dataTable value="#{departamentoController.items}" var="item" class="table  table-hover  table-borderless" >
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListDepartamentoTitle_descripcion}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.descripcion}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle.ListDepartamentoTitle_estado}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.estado.descripcion}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Editar"/>
+                                            </f:facet>
+                                            <h:commandLink class="btn btn-warning"  action="#{departamentoController.prepareEdit}" value="Editar Departamento"/>
+
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Borrar"/>
+                                            </f:facet>                                            
+                                            <h:commandLink class="btn btn-danger" action="#{departamentoController.destroy}" value="Eliminar Departamento"/>
+                                        </h:column>
+
+                                    </h:dataTable>
+                                    <h:commandLink class="btn btn-success"  action="#{departamentoController.prepareCreate}" value="Añadir Departamento"/>
+                                </h:panelGroup>
+
+                            </h:form>
+
+                        </div>
+
+                        <div class="tab-pane" id="language" role="tabpanel">
+
+                            <h:form>
+
+                                <br/>
+                                <br/>
+                                <h:outputText escape="false" value="#{bundle.ListIdiomasEmpty}" rendered="#{idiomasController.items.rowCount == 0}"/>
+                                <h:panelGroup rendered="#{idiomasController.items.rowCount > 0}">
+                                    <h:outputText value="#{idiomasController.pagination.pageFirstItem + 1}..#{idiomasController.pagination.pageLastItem + 1}/#{idiomasController.pagination.itemsCount}"/>&nbsp;
+                                    <h:commandLink action="#{idiomasController.previous}" value="#{bundle.Previous} #{idiomasController.pagination.pageSize}" rendered="#{idiomasController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink action="#{idiomasController.next}" value="#{bundle.Next} #{idiomasController.pagination.pageSize}" rendered="#{idiomasController.pagination.hasNextPage}"/>&nbsp;
+
+                                    <h:dataTable value="#{idiomasController.items}" var="item" class="table  table-hover  table-borderless">
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Idioma"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.idioma}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Estado"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.estado.descripcion}"/>
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Editar"/>
+                                            </f:facet>
+                                            <h:commandLink class="btn btn-warning" action="#{idiomasController.prepareEdit}" value="Editar Idioma"/>
+
+                                        </h:column>
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Borrar"/>
+                                            </f:facet>
+                                            <h:commandLink class="btn btn-danger" action="#{idiomasController.destroy}" value="Eliminar Idioma"/>
+                                        </h:column>
+
+                                    </h:dataTable>
+                                    <h:commandLink class="btn btn-success" action="#{idiomasController.prepareCreate}" value="Añadir Idioma"/>
+
+                                </h:panelGroup>
+                            </h:form>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script>
+            $(function () {
+                $('#myList a:last-child').tab('show');
+            });
+        </script>
+        
+        <script>
+            $('.input-number-motherfucker').on('input', function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    </h:body>
+</html>

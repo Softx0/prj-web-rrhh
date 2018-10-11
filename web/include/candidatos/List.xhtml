@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListCandidatosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListCandidatosEmpty}" rendered="#{candidatosController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{candidatosController.items.rowCount > 0}">
+                    <h:outputText value="#{candidatosController.pagination.pageFirstItem + 1}..#{candidatosController.pagination.pageLastItem + 1}/#{candidatosController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{candidatosController.previous}" value="#{bundle.Previous} #{candidatosController.pagination.pageSize}" rendered="#{candidatosController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{candidatosController.next}" value="#{bundle.Next} #{candidatosController.pagination.pageSize}" rendered="#{candidatosController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{candidatosController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCandidatosTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCandidatosTitle_cedula}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cedula}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCandidatosTitle_nombre}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombre}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCandidatosTitle_salarioAspira}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.salarioAspira}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCandidatosTitle_recomendadoPor}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.recomendadoPor}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCandidatosTitle_puestoAspira}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.puestoAspira}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCandidatosTitle_competencias}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.competencias}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCandidatosTitle_capacitaciones}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.capacitaciones}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCandidatosTitle_idiomas}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idiomas}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCandidatosTitle_experienciaLaboral}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.experienciaLaboral}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCandidatosTitle_estadoCandidato}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estadoCandidato}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{candidatosController.prepareView}" value="#{bundle.ListCandidatosViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{candidatosController.prepareEdit}" value="#{bundle.ListCandidatosEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{candidatosController.destroy}" value="#{bundle.ListCandidatosDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{candidatosController.prepareCreate}" value="#{bundle.ListCandidatosCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListCandidatosIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

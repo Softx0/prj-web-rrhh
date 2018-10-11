@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditExperienciaLaboralTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditExperienciaLaboralLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{experienciaLaboralController.selected.id}" title="#{bundle.EditExperienciaLaboralTitle_id}" required="true" requiredMessage="#{bundle.EditExperienciaLaboralRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditExperienciaLaboralLabel_empresa}" for="empresa" />
+                    <h:inputText id="empresa" value="#{experienciaLaboralController.selected.empresa}" title="#{bundle.EditExperienciaLaboralTitle_empresa}" required="true" requiredMessage="#{bundle.EditExperienciaLaboralRequiredMessage_empresa}"/>
+                    <h:outputLabel value="#{bundle.EditExperienciaLaboralLabel_puestoOcupado}" for="puestoOcupado" />
+                    <h:inputText id="puestoOcupado" value="#{experienciaLaboralController.selected.puestoOcupado}" title="#{bundle.EditExperienciaLaboralTitle_puestoOcupado}" />
+                    <h:outputLabel value="#{bundle.EditExperienciaLaboralLabel_fechaDesde}" for="fechaDesde" />
+                    <h:inputText id="fechaDesde" value="#{experienciaLaboralController.selected.fechaDesde}" title="#{bundle.EditExperienciaLaboralTitle_fechaDesde}" required="true" requiredMessage="#{bundle.EditExperienciaLaboralRequiredMessage_fechaDesde}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditExperienciaLaboralLabel_fechaHasta}" for="fechaHasta" />
+                    <h:inputText id="fechaHasta" value="#{experienciaLaboralController.selected.fechaHasta}" title="#{bundle.EditExperienciaLaboralTitle_fechaHasta}" required="true" requiredMessage="#{bundle.EditExperienciaLaboralRequiredMessage_fechaHasta}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditExperienciaLaboralLabel_salario}" for="salario" />
+                    <h:inputText id="salario" value="#{experienciaLaboralController.selected.salario}" title="#{bundle.EditExperienciaLaboralTitle_salario}" required="true" requiredMessage="#{bundle.EditExperienciaLaboralRequiredMessage_salario}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{experienciaLaboralController.update}" value="#{bundle.EditExperienciaLaboralSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditExperienciaLaboralViewLink}"/>
+                <br />
+                <h:commandLink action="#{experienciaLaboralController.prepareList}" value="#{bundle.EditExperienciaLaboralShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditExperienciaLaboralIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

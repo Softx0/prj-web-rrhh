@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>RRHH</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta charset="UTF-8"></meta>
+        <meta name="keywords" content="Seeking Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+              Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"></link>
+
+        <!-- Custom Theme files -->
+        <link href="css/style.css" rel='stylesheet' type='text/css' />
+        <link href='//fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'/>
+        <!--font-Awesome-->
+        <link href="css/font-awesome.css" rel="stylesheet"/> 
+    </h:head>
+    <h:body>
+        <nav >
+            <nav style="background-color: #2185C5;">
+                <div class="nav-wrapper">
+                    <a href="index.xhtml" class="brand-logo"><img src="images/logo.png" alt="" style="width:50%"/></a>
+                    <a href="#!" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="about.xhtml">Sobre Nosotros</a></li>
+                        <li><a href="login.xhtml">Login</a></li>
+                        <li><a href="register.xhtml">Registro</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="about.xhtml">Sobre Nosotros</a></li>
+                <li><a href="login.xhtml">Login</a></li>
+                <li><a href="register.xhtml">Registro</a></li>
+            </ul>
+        </nav>
+        <div class="banner_1">
+            <div class="container">
+                <div id="search_wrapper1">
+                    <div id="search_form" class="clearfix">
+                        <h1>Empieza YA!</h1>
+                        <p>
+                            <!-- 
+                             <input type="text" class="text" placeholder=" " value="Enter Keyword(s)" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Keyword(s)';}">
+                             <input type="text" class="text" placeholder=" " value="Location" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Location';}">
+                             <label class="btn2 btn-2 btn2-1b"><input type="submit" value="Find Jobs"></label>
+                            -->
+                            <br/>
+                        </p>
+                    </div>
+                </div>
+            </div> 
+        </div>	
+
+        <div class="container">
+            <div class="single">  
+                <div class="form-container">
+                    <h2>Registrate Ahora Mismo!</h2>
+                    <h:form>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card black-text  darken-1">
+
+                                    <div class="card-action">
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <span><i class="fa fa-user"></i></span>
+                                                <div class="input-field inline"  data-validate = "Correo es obligatorio">
+                                                    <h:inputText id="email" class="validate form-control input-lg"  required="true" value="#{usuarioController.selected.email}" title="Correo Electronico" size="100" maxlength="100"></h:inputText>
+                                                    <label  for="email">Email</label>
+
+                                                </div>
+                                            </div>
+                                        </div>                                   
+                                    </div>
+
+                                    <div class="card-action">
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <span><i class="fa fa-key"></i></span>
+                                                <div class="input-field inline" data-validate = "La Contrasena es obligatoria">
+                                                    <h:inputSecret class="validate form-control input-lg" id="contrasena" value="#{usuarioController.selected.contrasena}" required="true" size="100" ></h:inputSecret>
+                                                    <label  for="contrasena">Contraseña</label>
+                                                </div>
+                                            </div>
+                                        </div>                                   
+                                    </div>
+
+                                    <div class="card-action">
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <span><i class="fa fa-key"></i></span>
+                                                <div class="input-field inline" data-validate = "La Contrasena es obligatoria">
+                                                    <input type="password" id="confirm-password" required="true" size="100" class="validate form-control input-lg"/>
+                                                    <label  for="confirm-password"> Confirma la Contraseña</label>
+                                                </div>
+                                            </div>
+                                        </div>                                   
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-actions floatRight">
+                                <h:commandButton class="btn btn-primary" action="#{usuarioController.create}" value="Registrarme!">
+                                </h:commandButton>
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="col-md-3 grid_3">
+                    <h4>Navigacion</h4>
+                    <ul class="f_list f_list1">
+                        <li><a href="index.xhtml">Home</a></li>
+                        <li><a href="login.xhtml">Logearte</a></li>
+                        <li><a href="register.xhtml">Registro</a></li>
+                        <li><a href="about.html">Sobre Nosotros</a></li>
+                    </ul>
+                    <ul class="f_list">
+                        <li><a href="terms.html">Terminos de Uso</a></li>
+                        <li><a href="contact.html">Contactanos</a></li>
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-3 grid_3">
+                    <h4>Lorem ipsum</h4>
+                    <div class="footer-list">
+                        <ul>
+                            <li><p><span class="yellow"><a href="#">Lorem Ipsum</a></span> Lorem Ipsum Lorem Ipsum Lorem Ipsum</p></li>
+                            <li><p><span class="yellow"><a href="#">Lorem Ipsumr</a></span> Lorem Ipsum Lorem Ipsum Lorem Ipsum</p></li>
+                            <li><p><span class="yellow"><a href="#">Lorem Ipsum</a></span> Lorem Ipsum Lorem Ipsum Lorem Ipsum</p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 grid_3">
+                    <h4>More Lorem Ipsum</h4>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                </div>
+                <div class="col-md-3 grid_3">
+                    <h4>Dont send us your email for our newsletter</h4>
+                    <p>We never response to you :)</p>
+                    <form>
+                        <input type="text" class="form-control" placeholder="Enter your email"/>
+                        <button type="button" class="btn red">Subscribe now!</button>
+                    </form>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="footer_bottom">	
+            <div class="container">
+                <div class="col-sm-2">
+                    <ul class="f_list2">
+                        <li><a href="jobs.html">Eduardo Valenzuela</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <ul class="f_list2">
+                        <li><a href="jobs.html">2016-2511</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <ul class="f_list2">
+                        <li><a href="jobs.html">https://github.com/Softx0/</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 footer_text">
+                    <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium numqua"</p>
+                </div>
+                <div class="clearfix"> </div>
+                <div class="copy">
+                    <p>Copyright © 2015 Seeking . All Rights Reserved . Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+                </div>
+            </div>
+        </div>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+
+
+
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var elems = document.querySelectorAll('.sidenav');
+                var instances = M.Sidenav.init(elems, options);
+            });
+
+            // Or with jQuery
+
+            $(document).ready(function () {
+                $('.sidenav').sidenav();
+            });
+
+        </script>
+    </h:body>
+</html>
+

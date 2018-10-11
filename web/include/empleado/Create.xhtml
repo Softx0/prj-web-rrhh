@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateEmpleadoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                 
+                    <h:outputLabel value="#{bundle.CreateEmpleadoLabel_cedula}" for="cedula" />
+                    <h:inputText id="cedula" value="#{empleadoController.selected.cedula}" title="#{bundle.CreateEmpleadoTitle_cedula}" required="true" requiredMessage="#{bundle.CreateEmpleadoRequiredMessage_cedula}"/>
+                    <h:outputLabel value="#{bundle.CreateEmpleadoLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{empleadoController.selected.nombre}" title="#{bundle.CreateEmpleadoTitle_nombre}" required="true" requiredMessage="#{bundle.CreateEmpleadoRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{bundle.CreateEmpleadoLabel_fechaIngreso}" for="fechaIngreso" />
+                    <h:inputText id="fechaIngreso" value="#{empleadoController.selected.fechaIngreso}" title="#{bundle.CreateEmpleadoTitle_fechaIngreso}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateEmpleadoLabel_salarioMensual}" for="salarioMensual" />
+                    <h:inputText id="salarioMensual" value="#{empleadoController.selected.salarioMensual}" title="#{bundle.CreateEmpleadoTitle_salarioMensual}" />
+                    <h:outputLabel value="#{bundle.CreateEmpleadoLabel_candidato}" for="candidato" />
+                    <h:selectOneMenu id="candidato" value="#{empleadoController.selected.candidato}" title="#{bundle.CreateEmpleadoTitle_candidato}" >
+                        <f:selectItems value="#{candidatosController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateEmpleadoLabel_puesto}" for="puesto" />
+                    <h:selectOneMenu id="puesto" value="#{empleadoController.selected.puesto}" title="#{bundle.CreateEmpleadoTitle_puesto}" >
+                        <f:selectItems value="#{puestosController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateEmpleadoLabel_estado}" for="estado" />
+                    <h:selectOneMenu id="estado" value="#{empleadoController.selected.estado}" title="#{bundle.CreateEmpleadoTitle_estado}" >
+                        <f:selectItems value="#{estadoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{empleadoController.create}" value="#{bundle.CreateEmpleadoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{empleadoController.prepareList}" value="#{bundle.CreateEmpleadoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateEmpleadoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

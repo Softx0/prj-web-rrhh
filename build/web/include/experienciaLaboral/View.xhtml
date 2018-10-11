@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewExperienciaLaboralTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewExperienciaLaboralLabel_id}"/>
+                    <h:outputText value="#{experienciaLaboralController.selected.id}" title="#{bundle.ViewExperienciaLaboralTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewExperienciaLaboralLabel_empresa}"/>
+                    <h:outputText value="#{experienciaLaboralController.selected.empresa}" title="#{bundle.ViewExperienciaLaboralTitle_empresa}"/>
+                    <h:outputText value="#{bundle.ViewExperienciaLaboralLabel_puestoOcupado}"/>
+                    <h:outputText value="#{experienciaLaboralController.selected.puestoOcupado}" title="#{bundle.ViewExperienciaLaboralTitle_puestoOcupado}"/>
+                    <h:outputText value="#{bundle.ViewExperienciaLaboralLabel_fechaDesde}"/>
+                    <h:outputText value="#{experienciaLaboralController.selected.fechaDesde}" title="#{bundle.ViewExperienciaLaboralTitle_fechaDesde}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewExperienciaLaboralLabel_fechaHasta}"/>
+                    <h:outputText value="#{experienciaLaboralController.selected.fechaHasta}" title="#{bundle.ViewExperienciaLaboralTitle_fechaHasta}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewExperienciaLaboralLabel_salario}"/>
+                    <h:outputText value="#{experienciaLaboralController.selected.salario}" title="#{bundle.ViewExperienciaLaboralTitle_salario}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{experienciaLaboralController.destroyAndView}" value="#{bundle.ViewExperienciaLaboralDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewExperienciaLaboralEditLink}"/>
+                <br />
+                <h:commandLink action="#{experienciaLaboralController.prepareCreate}" value="#{bundle.ViewExperienciaLaboralCreateLink}" />
+                <br />
+                <h:commandLink action="#{experienciaLaboralController.prepareList}" value="#{bundle.ViewExperienciaLaboralShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewExperienciaLaboralIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

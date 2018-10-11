@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewCandidatosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewCandidatosLabel_id}"/>
+                    <h:outputText value="#{candidatosController.selected.id}" title="#{bundle.ViewCandidatosTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewCandidatosLabel_cedula}"/>
+                    <h:outputText value="#{candidatosController.selected.cedula}" title="#{bundle.ViewCandidatosTitle_cedula}"/>
+                    <h:outputText value="#{bundle.ViewCandidatosLabel_nombre}"/>
+                    <h:outputText value="#{candidatosController.selected.nombre}" title="#{bundle.ViewCandidatosTitle_nombre}"/>
+                    <h:outputText value="#{bundle.ViewCandidatosLabel_salarioAspira}"/>
+                    <h:outputText value="#{candidatosController.selected.salarioAspira}" title="#{bundle.ViewCandidatosTitle_salarioAspira}"/>
+                    <h:outputText value="#{bundle.ViewCandidatosLabel_recomendadoPor}"/>
+                    <h:outputText value="#{candidatosController.selected.recomendadoPor}" title="#{bundle.ViewCandidatosTitle_recomendadoPor}"/>
+                    <h:outputText value="#{bundle.ViewCandidatosLabel_puestoAspira}"/>
+                    <h:outputText value="#{candidatosController.selected.puestoAspira}" title="#{bundle.ViewCandidatosTitle_puestoAspira}"/>
+                    <h:outputText value="#{bundle.ViewCandidatosLabel_competencias}"/>
+                    <h:outputText value="#{candidatosController.selected.competencias}" title="#{bundle.ViewCandidatosTitle_competencias}"/>
+                    <h:outputText value="#{bundle.ViewCandidatosLabel_capacitaciones}"/>
+                    <h:outputText value="#{candidatosController.selected.capacitaciones}" title="#{bundle.ViewCandidatosTitle_capacitaciones}"/>
+                    <h:outputText value="#{bundle.ViewCandidatosLabel_idiomas}"/>
+                    <h:outputText value="#{candidatosController.selected.idiomas}" title="#{bundle.ViewCandidatosTitle_idiomas}"/>
+                    <h:outputText value="#{bundle.ViewCandidatosLabel_experienciaLaboral}"/>
+                    <h:outputText value="#{candidatosController.selected.experienciaLaboral}" title="#{bundle.ViewCandidatosTitle_experienciaLaboral}"/>
+                    <h:outputText value="#{bundle.ViewCandidatosLabel_estadoCandidato}"/>
+                    <h:outputText value="#{candidatosController.selected.estadoCandidato}" title="#{bundle.ViewCandidatosTitle_estadoCandidato}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{candidatosController.destroyAndView}" value="#{bundle.ViewCandidatosDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewCandidatosEditLink}"/>
+                <br />
+                <h:commandLink action="#{candidatosController.prepareCreate}" value="#{bundle.ViewCandidatosCreateLink}" />
+                <br />
+                <h:commandLink action="#{candidatosController.prepareList}" value="#{bundle.ViewCandidatosShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewCandidatosIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

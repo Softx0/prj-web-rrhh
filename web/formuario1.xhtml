@@ -1,0 +1,350 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="Seeking Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+              Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' ></link>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/helper.js"></script>
+        <!-- Custom Theme files -->
+        <link href="css/style.css" rel='stylesheet' type='text/css' ></link>
+        <link href='//fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'></link>
+        <!--font-Awesome-->
+        <link href="css/font-awesome.css" rel="stylesheet"></link>
+        <!--font-Awesome-->
+        <style>
+            /* Style tab links */
+            .tablink {
+                background-color: #555;
+                color: white;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                font-size: 17px;
+                width: 25%;
+            }
+
+            .tablink:hover {
+                background-color: #777;
+            }
+
+            /* Style the tab content (and add height:100% for full page content) */
+            .tabcontent {
+                color: white;
+                display: none;
+                padding: 100px 20px;
+                height: 100%;
+            }
+
+        </style>
+    </h:head>
+    <h:body>
+
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.xhtml"><img src="images/logo.png" alt="" style="width:50%"/></a>
+                </div>
+                <!--navbar-header-->
+                <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 1px;">
+                    <ul class="nav navbar-nav">
+                        <li><a href="formuario1.xhtml">Formulario plain</a></li>
+                        <li><a href="index.xhtml">Inicio</a></li>
+                        <li><a href="about.xhtml">Sobre Nosotros</a></li>
+                        <li><a href="login.xhtml">Login</a></li>
+                        <li><a href="register.xhtml">Registro</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <!--navbar-collapse-->
+        </nav>
+
+
+        <div class="banner_1">
+            <div class="container">
+                <div id="search_wrapper1">
+                    <div id="search_form" class="clearfix">
+                        <br/>
+                        <h1>Que esperas para buscar trabajo?</h1>
+                    </div>
+                </div>
+            </div> 
+        </div>	
+
+        <div class="container">
+            <div class="single">  
+                <div class="form-container">
+                    <h2>Formulario para solicitar empleo!</h2>
+                    <div class="search_form1">
+
+                        <button class="tablink" onclick="openPage('Home', this, 'red')">Datos Principales:</button>
+                        <button class="tablink" onclick="openPage('News', this, 'green')" >Idiomas:</button>
+                        <button class="tablink" onclick="openPage('Contact', this, 'blue')">Formacion Academica:</button>
+                        <button class="tablink" onclick="openPage('About', this, 'orange')">Experiencia Laboral</button>
+
+                        <div id="Home" class="tabcontent">
+
+                            <h:form>
+                                <div class="row">
+                                    <div class="row">
+                                        <h:outputLabel style="color: black;" value="#{bundle.CreateCandidatosLabel_cedula}" for="cedula" />
+                                        <h:inputText id="cedula" maxlength="11" value="#{candidatosController.selected.cedula}" title="#{bundle.CreateCandidatosTitle_cedula}" required="true" requiredMessage="#{bundle.CreateCandidatosRequiredMessage_cedula}"/>
+                                    </div>
+
+                                    <div class="row">
+                                        <h:outputLabel style="color: black;" value="#{bundle.CreateCandidatosLabel_nombre}" for="nombre" />
+                                        <h:inputText id="nombre" value="#{candidatosController.selected.nombre}" title="#{bundle.CreateCandidatosTitle_nombre}" required="true" requiredMessage="#{bundle.CreateCandidatosRequiredMessage_nombre}"/>
+                                    </div>
+
+                                    <div class="row">
+                                        <h:outputLabel style="color: black;" value="#{bundle.CreateCandidatosLabel_salarioAspira}" for="salarioAspira" />
+                                        <h:inputText id="salarioAspira" value="#{candidatosController.selected.salarioAspira}" title="#{bundle.CreateCandidatosTitle_salarioAspira}" required="true" requiredMessage="#{bundle.CreateCandidatosRequiredMessage_salarioAspira}"/>
+                                    </div>
+
+                                    <div class="row">
+                                        <h:outputLabel style="color: black;" value="#{bundle.CreateCandidatosLabel_recomendadoPor}" for="recomendadoPor" />
+                                        <h:inputText id="recomendadoPor" value="#{candidatosController.selected.recomendadoPor}" title="#{bundle.CreateCandidatosTitle_recomendadoPor}" />
+                                    </div>
+
+                                    <div class="row">
+                                        <h:outputLabel style="color: black;" value="#{bundle.CreateCandidatosLabel_puestoAspira}" for="puestoAspira" />
+                                        <h:selectOneMenu style="color: black;" id="puestoAspira" value="#{candidatosController.selected.puestoAspira}" title="#{bundle.CreateCandidatosTitle_puestoAspira}" >
+                                            <f:selectItems value="#{puestosController.itemsAvailableSelectOne}"/>
+                                        </h:selectOneMenu>
+                                    </div>
+                                    <br/>
+                                    <div class="row">
+                                        <h:commandLink class="waves-effect waves-light btn" action="#{candidatosController.create}" value="Guardar Cambios" />
+                                        <button class="btn btn-default" onclick="openPage('News', this, 'green')">Continuar...</button>
+                                    </div>
+                                </div>
+                            </h:form>
+
+                        </div>
+
+                        <div id="News" class="tabcontent">
+                            <h:form>
+                                <div class="row">
+
+                                    <h:outputLabel style="color: black;"  value="#{bundle.CreateCandidatosLabel_idiomas}" for="idiomas" />
+                                    <h:selectOneMenu style="color: black;"  id="idiomas" value="#{candidatosController.selected.idiomas}" title="#{bundle.CreateCandidatosTitle_idiomas}" >
+                                        <f:selectItems value="#{idiomasController.itemsAvailableSelectOne}"/>
+                                    </h:selectOneMenu>
+
+                                    <br/>
+                                    <div class="row">
+                                        <h:commandLink class="waves-effect waves-light btn" action="#{candidatosController.create}" value="Guardar Cambios" />
+                                        <button class="btn btn-default" onclick="openPage('Contact', this, 'blue')">Continuar:</button>
+                                    </div>
+                                </div>
+                            </h:form>
+                        </div>
+
+                        <div id="Contact" class="tabcontent">
+
+                            <h:form>
+
+                                <div class="row">
+                                    <!--Institucion de capacitacion-->
+                                    <div class="row">
+                                        <label style="color: black;" for="institucion">Institucion</label>
+                                        <h:inputText style="color: black;"  id="institucion" value="#{capacitacionesController.selected.institucion}" title="#{bundle.CreateCapacitacionesTitle_institucion}" />
+
+                                    </div>
+
+                                    <!--TItulo de capacitacion-->
+                                    <div class="row">
+
+                                        <label style="color: black;" for="titulo">Titulo Otorgado</label>
+                                        <h:inputText style="color: black;" id="titulo" value="#{capacitacionesController.selected.titulo}" title="#{bundle.CreateCapacitacionesTitle_titulo}" required="true" requiredMessage="#{bundle.CreateCapacitacionesRequiredMessage_titulo}"/>
+
+                                    </div>
+
+                                    <!--Fecha desde capacitacion-->
+                                    <div class="row">
+                                        <label style="color: black;" for="popup1">Fecha Desde:</label>
+                                        <br/>
+                                        <p:calendar style="color: black;" id="popup1" value="#{capacitacionesController.selected.fechaDesde}" />
+                                    </div>
+
+                                    <!--Fecha hasta capacitacion-->
+                                    <div style="color: black;" class="input-field col s6">
+                                        <label for="popup">Fecha Hasta:</label>
+                                        <br/>
+                                        <p:calendar style="color: black;" id="popup" value="#{capacitacionesController.selected.fechaHasta}" />
+                                    </div>
+
+                                    <!--nivel de capacitacion-->
+                                    <div class="row">
+                                        <label style="color: black;" for="nivel">Nivel de la Capacitacion</label>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <h:selectOneMenu style="background-color: white; color: black;"  class="dropdown-trigger btn" id="nivel" value="#{capacitacionesController.selected.nivel}" title="#{bundle.CreateCapacitacionesTitle_nivel}" >
+                                            <f:selectItems value="#{nivelAcademicoController.itemsAvailableSelectOne}"/>
+                                        </h:selectOneMenu>
+                                    </div>
+
+                                    <!--Crear Capacitacion-->
+                                    <div class="row">
+                                        <br/>
+                                        <br/>
+                                        <h:commandLink class="waves-effect waves-light btn" action="#{capacitacionesController.create}" value="Guardar Cambios" />
+                                    </div>
+                                </div>
+                            </h:form>
+
+
+                        </div>
+
+                        <div id="About" class="tabcontent">
+                            <h:form>
+
+                                <div class="row">
+                                    <!--EMpresa de experiencia-->
+                                    <div class="row">
+                                        <label style="color: black;" for="empresa">Empresa u Organizacion:</label>
+                                        <h:inputText style="color: black;" class="form-control" id="empresa" value="#{experienciaLaboralController.selected.empresa}" title="#{bundle.CreateExperienciaLaboralTitle_empresa}" required="true" requiredMessage="#{bundle.CreateExperienciaLaboralRequiredMessage_empresa}"/>
+                                    </div>
+
+                                    <!--Puesto ocupado en esa empresa-->
+                                    <div class="row">
+                                        <label style="color: black;" for="puestoOcupado">Puesto Ocupado:</label>
+                                        <h:inputText style="color: black;" id="puestoOcupado" value="#{experienciaLaboralController.selected.puestoOcupado}" title="#{bundle.CreateExperienciaLaboralTitle_puestoOcupado}" />
+                                    </div>
+
+                                    <!--Fecha desde experiencia-->
+                                    <div class="row">
+                                        <label style="color: black;" for="FechaDesdeExperiencia">Fecha Desde:</label>
+                                        <br/>
+                                        <h:inputText style="color: black;" id="fechaDesde" value="#{experienciaLaboralController.selected.fechaDesde}" title="#{bundle.CreateExperienciaLaboralTitle_fechaDesde}" required="true" requiredMessage="#{bundle.CreateExperienciaLaboralRequiredMessage_fechaDesde}">
+                                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                                        </h:inputText>        
+
+                                        <p:outputLabel style="color: black;" for="popup" value="Popup:" />
+                                        <p:calendar id="popup" value="#{experienciaLaboralController.selected.fechaDesde}" />
+                                    </div>
+
+                                    <!--Fecha hasta experiencia-->
+                                    <div class="row">
+                                        <label style="color: black;" for="FechaHastaExperiencia">Fecha Hasta:</label>
+                                        <br/>
+                                        <h:inputText style="color: black;" id="fechaHasta" value="#{experienciaLaboralController.selected.fechaHasta}" title="#{bundle.CreateExperienciaLaboralTitle_fechaHasta}" required="true" requiredMessage="#{bundle.CreateExperienciaLaboralRequiredMessage_fechaHasta}">
+                                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                                        </h:inputText>                   
+                                    </div>
+
+                                    <!--Salario Antes-->
+                                    <div class="row">
+                                        <label style="color: black;" for="salario">Salario Anterior:</label>
+                                        <h:inputText id="salario" value="#{experienciaLaboralController.selected.salario}" title="#{bundle.CreateExperienciaLaboralTitle_salario}" required="true" requiredMessage="#{bundle.CreateExperienciaLaboralRequiredMessage_salario}"/>
+                                    </div>
+
+                                    <!--Crear experiencia-->
+                                    <div class="row">
+                                        <br/>
+                                        <br/>
+                                        <h:commandLink class="btn btn-success" action="#{experienciaLaboralController.create}" value="Guardar y Finalizar!" />
+                                    </div>
+                                </div>
+                            </h:form>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Footer del sitio-->
+        <div class="footer">
+            <div class="container">
+                <div class="col-md-3 grid_3">
+                    <h4>Navigacion</h4>
+                    <ul class="f_list f_list1">
+                        <li><a href="index.xhtml">Home</a></li>
+                        <li><a href="login.xhtml">Logearte</a></li>
+                        <li><a href="register.xhtml">Registro</a></li>
+                        <li><a href="about.html">Sobre Nosotros</a></li>
+                    </ul>
+                    <ul class="f_list">
+                        <li><a href="terms.html">Terminos de Uso</a></li>
+                        <li><a href="contact.html">Contactanos</a></li>
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-3 grid_3">
+                    <h4>Lorem ipsum</h4>
+                    <div class="footer-list">
+                        <ul>
+                            <li><p><span class="yellow"><a href="#">Lorem Ipsum</a></span> Lorem Ipsum Lorem Ipsum Lorem Ipsum</p></li>
+                            <li><p><span class="yellow"><a href="#">Lorem Ipsumr</a></span> Lorem Ipsum Lorem Ipsum Lorem Ipsum</p></li>
+                            <li><p><span class="yellow"><a href="#">Lorem Ipsum</a></span> Lorem Ipsum Lorem Ipsum Lorem Ipsum</p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 grid_3">
+                    <h4>More Lorem Ipsum</h4>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                </div>
+                <div class="col-md-3 grid_3">
+                    <h4>Dont send us your email for our newsletter</h4>
+                    <p>We never response to you :)</p>
+                    <form>
+                        <input type="text" class="form-control" placeholder="Enter your email"/>
+                        <button type="button" class="btn red">Subscribe now!</button>
+                    </form>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="footer_bottom">	
+            <div class="container">
+                <div class="col-sm-2">
+                    <ul class="f_list2">
+                        <li><a href="jobs.html">Eduardo Valenzuela</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <ul class="f_list2">
+                        <li><a href="jobs.html">2016-2511</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <ul class="f_list2">
+                        <li><a href="jobs.html">https://github.com/Softx0/</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 footer_text">
+                    <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium numqua"</p>
+                </div>
+                <div class="clearfix"> </div>
+                <div class="copy">
+                    <p>Copyright © 2015 Seeking . All Rights Reserved . Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/helper.js"></script>
+    </h:body>
+</html>
+

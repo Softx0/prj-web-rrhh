@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText style="margin: 20px; margin-top: 30px;" value="Creacion de Competencias"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form style="margin: 20px;">
+                <h:panelGrid columns="2">
+
+                    <h3>Competencia: </h3>
+                    <h:inputText onkeypress="return soloLetras(event)" class="form-control" id="competencia" value="#{competenciasController.selected.competencia}" title="#{bundle.CreateCompetenciasTitle_competencia}" required="true" requiredMessage="#{bundle.CreateCompetenciasRequiredMessage_competencia}"/>
+
+                    <h3>Estado de la Competencia: </h3>
+                    <h:selectOneMenu id="estado" value="#{competenciasController.selected.estado}" title="#{bundle.CreateCompetenciasTitle_estado}" >
+                        <f:selectItems value="#{estadoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+
+                </h:panelGrid>
+                <br />
+                <h:commandLink class="btn btn-success"  action="#{competenciasController.create}" value="#{bundle.CreateCompetenciasSaveLink}" />
+                <br />
+                <br />
+                <h:link outcome="/admin2" class="btn btn-primary" value="Volver Atras"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

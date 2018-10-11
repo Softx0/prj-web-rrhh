@@ -1,0 +1,527 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>RRHH</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta charset="UTF-8"></meta>
+        <meta name="keywords" content="Seeking Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+              Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+        <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery.min.js"></script>
+
+        <script src="js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"></link>
+        <link rel="stylesheet" href="/resources/demos/style.css"></link>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"></link>
+
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+
+        <!-- Custom Theme files -->
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+        <link href='//fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'/>
+        <!--font-Awesome-->
+        <link href="css/font-awesome.css" rel="stylesheet"/> 
+        <!--font-Awesome-->
+
+    </h:head>
+    <h:body style="background-color: ghostwhite;">
+
+
+        <!--NavBar App dehaze-->
+        <nav >
+            <nav style="background-color: #2185C5;">
+                <div class="nav-wrapper">
+                    <a class="navbar-brand" href="index.xhtml"><img src="images/logo.png" alt="" style="width:50%"/></a>
+
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="index.xhtml">Inicio</a></li>
+                        <li><a href="about.xhtml">Sobre Nosotros</a></li>
+                        <li><a href="login.xhtml">Login</a></li>
+                        <li><a href="register.xhtml">Registro</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="index.xhtml">Inicio</a></li>
+                <li><a href="about.xhtml">Sobre Nosotros</a></li>
+                <li><a href="login.xhtml">Login</a></li>
+                <li><a href="register.xhtml">Registro</a></li>
+            </ul>
+        </nav>
+
+        <div class="banner_1">
+            <div class="container">
+                <div id="search_wrapper1">
+                    <div id="search_form" class="clearfix">
+                        <br/>
+                        <h1>Que esperas para buscar trabajo?</h1>
+                    </div>
+                </div>
+            </div> 
+        </div>	
+
+        <!--Formulario -->
+        <div class="single">  
+            <div class="form-container">
+                <h2>Formulario para solicitar empleo!</h2>
+                <div class="container">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-left: 180px;">
+
+            <div class="card col-md-11">
+                <div class="card-content">
+                    <span class="card-title">Solicitud de Empleo!</span> 
+                    <p class="card-content">Bienvenido postulante, estas a unos cuantos minutos de encontrar tu proximo empleo soñado, solo debes de llenar el formulario que se encuentra en las secciones de abajo uno por uno en orden, esta sera tu primera prueba!</p>
+                    <p class="card-content"> Adelante Colega tu puedes!!!</p>
+                </div>
+
+                <!--Secciones de la carta-->
+                <div class="card-tabs"> 
+                    <ul class="tabs tabs-fixed-width">
+                        <li class="tab"><a href="#informacion">Informacion</a></li>
+                        <li class="tab"><a href="#datosBasicos">Datos Basicos</a></li>
+                        <li class="tab"><a href="#capacitacion">Formacion Academica</a></li>
+                        <li class="tab"><a href="#experiencia">Experiencia Laboral</a></li>
+                    </ul>
+                </div>
+
+
+                <!--Contenido de la carta-->
+                <div class="card-content">
+
+                    <!--Informacion Basica-->
+                    <div id="informacion">
+                        <p>Bienvenido Postulante al formulario para conseguir tu proximo trabajo!</p>
+                        <p>En este debes ir llenando pequeñas preguntas de las secciones que puedes ver!</p>
+
+                        <div class="card-action">
+                            <a href="">Comenzar&rArr; </a>
+                        </div>
+                    </div>
+
+                    <!--Divisor-->
+                    <div  class="divider"></div>
+                    <br/>
+
+                    <!--Datos Basicos-->
+                    <div id="datosBasicos">
+
+                        <h:panelGroup id="messagePanel" layout="block">
+                            <h:messages errorStyle="color: red" infoStyle="color: red" layout="table"/>
+                        </h:panelGroup>
+
+                        <h:form id="datos_basicos">
+
+                            <!--Cedula-->
+                            <div class="input-field col s6">
+                                <h:inputText id="cedula" maxlength="11" value="#{candidatosController.selected.cedula}" class="validate input-number-motherfucker" title="#{bundle.CreateCandidatosTitle_cedula}" required="true" requiredMessage="Debe introducir una cedula correcta!"/>
+                                <label for="cedula">Cedula:</label>
+                                <h:message for="cedula" errorClass="errorMessage" />
+                            </div>
+
+                            <!--Nombre Completo-->
+                            <div class="input-field col s6">
+                                <h:inputText id="nombre" value="#{candidatosController.selected.nombre}" class="validate" onkeypress="return soloLetras(event)" title="#{bundle.CreateCandidatosTitle_nombre}" required="true" requiredMessage="#{bundle.CreateCandidatosRequiredMessage_nombre}"/>
+                                <label for="nombre">Nombre Completo:</label>
+                                <h:message for="nombre" errorClass="errorMessage" />
+                            </div>
+
+                            <!--Salario al que aspira-->
+                            <div class="input-field col s6">
+                                <h:inputText id="salarioAspira" value="#{candidatosController.selected.salarioAspira}" class="validate input-number-motherfucker" title="#{bundle.CreateCandidatosTitle_salarioAspira}" required="true" requiredMessage="#{bundle.CreateCandidatosRequiredMessage_salarioAspira}"/>
+                                <label for="salarioAspira">Salario al que aspiras:</label>
+                            </div>
+
+                            <!--Recomendado por?-->
+                            <div class="input-field col s6">
+                                <h:inputText id="recomendadoPor" value="#{candidatosController.selected.recomendadoPor}" onkeypress="return soloLetras(event)" class="validate" title="#{bundle.CreateCandidatosTitle_recomendadoPor}" />
+                                <label for="recomendadoPor">Alguien te recomendo? Quien fue el colega?</label>
+
+                            </div>
+
+                            <!--Puesto al que Aspiras-->
+                            <div class="input-field col s6">
+                                <label for="puestoAspira">Elige tu futuro puesto:</label>
+                                <br/>
+                                <br/>
+                                <h:selectOneMenu style="background-color: white; color: black;"  class="dropdown-trigger btn" id="puestoAspira" value="#{candidatosController.selected.puestoAspira}" title="#{bundle.CreateCandidatosTitle_puestoAspira}" >
+                                    <f:selectItems value="#{puestosController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+
+                            </div>
+
+                            <!--Idiomas que maneja-->
+                            <div class="input-field col s6">
+                                <h:outputLabel value="Mis idiomas" for="language" />
+                                <br/>
+                                <br/>
+                                <h:selectOneMenu style="background-color: white; color: black;" class="dropdown-trigger btn" id="language" value="#{candidatosController.selected.idiomas}" title="#{bundle.CreateCandidatosTitle_idiomas}" >
+                                    <f:selectItems value="#{idiomasController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+
+                            </div>
+
+                            <!--Competencias que tiene-->
+                            <div class="input-field col s6">
+                                <h:outputLabel  value="Competencias" for="competencia" />
+                                <br/>
+                                <br/>
+                                <h:selectOneMenu style="background-color: white; color: black;" class="dropdown-trigger btn" id="competencia" value="#{candidatosController.selected.competencias}" title="#{bundle.CreateCandidatosTitle_competencias}" >
+                                    <f:selectItems value="#{competenciasController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+
+                            <!--Btn Candidato-->
+                            <div class="input-field col s6">
+                                <br/>
+                                <h:commandLink class="waves-effect waves-light btn" action="#{candidatosController.create}" value="Guardar y continuar" />
+                            </div>
+                        </h:form>
+                    </div>
+
+
+                    <!--Seccion de Capacitacion-->
+                    <div id="capacitacion">
+                        <h:panelGroup id="messageErrorBro" layout="block">
+                            <h:messages errorStyle="color: red" infoStyle="color: red" layout="table"/>
+                        </h:panelGroup>
+                        <h:form>
+
+                            <!--Input Institucion-->
+                            <div class="input-field col s6">
+                                <h:inputText class="validate" id="institucion" value="#{capacitacionesController.selected.institucion}" onkeypress="return soloLetras(event)" title="#{bundle.CreateCapacitacionesTitle_institucion}" />
+                                <label for="institucion">Institucion:</label> 
+                            </div>
+
+                            <!--Input Titulo-->
+                            <div class="input-field col s6">
+                                <h:inputText class="validate" id="titulo" value="#{capacitacionesController.selected.titulo}" onkeypress="return soloLetras(event)" title="#{bundle.CreateCapacitacionesTitle_titulo}" required="true" requiredMessage="#{bundle.CreateCapacitacionesRequiredMessage_titulo}"/>
+                                <label for="titulo">Titulo:</label> 
+                            </div>
+
+                            <!--Input Fecha Desde Capacitacion-->
+                            <div class="input-field col s6">
+                                <label for="fechaDesdeCapacitacion">Fecha Desde:</label> 
+                                <br/>
+                                <br/>
+                                <h:inputText id="fechaDesdeCapacitacion" class="datepicker" value="#{capacitacionesController.selected.fechaDesde}" title="#{bundle.CreateCapacitacionesTitle_fechaDesde}" required="true" requiredMessage="La Fecha desde debe ser menor que la Hasta">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:inputText>
+                                <h:message for="fechaDesdeCapacitacion" errorClass="errorMessage" />
+                                <!-- 
+                                <p:calendar id="fechaDesdecapacitacion"  pattern="MM/dd/yyyy" value="#{capacitacionesController.selected.fechaDesde}" />
+                                -->
+                            </div>
+
+                            <!--Input Fecha Hasta Capacitacion-->
+                            <div class="input-field col s6">
+                                <label for="fechaHastaCapacitacion">Fecha Hasta:</label> 
+                                <br/>
+                                <br/>
+                                <h:inputText id="fechaHastaCapacitacion" class="datepicker" onfocus="validate52()" value="#{capacitacionesController.selected.fechaHasta}" title="#{bundle.CreateCapacitacionesTitle_fechaHasta}" required="true" requiredMessage="La Fecha Desde debe ser mayor que la Hasta!">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:inputText>
+                                <h:message for="fechaHastaCapacitacion" errorClass="errorMessage" />
+                                <!--
+                                 <p:calendar id="fechaHastacapacitacion"  pattern="MM/dd/yyyy" value="#{capacitacionesController.selected.fechaHasta}" />
+                                -->
+                            </div>
+
+                            <!--Input Nivel Academico-->
+                            <div class="input-field col s6">
+                                <label for="nivel">Nivel Academico:</label>                         
+                                <br/>
+                                <br/>
+                                <h:selectOneMenu class="dropdown-trigger btn" style="background-color: white; color: black;" id="nivel" value="#{capacitacionesController.selected.nivel}" title="#{bundle.CreateCapacitacionesTitle_nivel}" >
+                                    <f:selectItems value="#{nivelAcademicoController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+
+                            <!--Btn Candidato-->
+                            <div class="input-field col s6" >
+                                <br/>
+                                <h:commandLink class="waves-effect waves-light btn" action="#{capacitacionesController.create}" value="Guardar y Continuar" />
+                                <br />
+                            </div>
+
+                        </h:form>
+                    </div>
+
+
+
+
+
+
+                    <!--Seccion de Experiencia-->
+                    <div id="experiencia">
+                        <h:panelGroup id="unErrorMas" layout="block">
+                            <h:messages errorStyle="color: red" infoStyle="color: red" layout="table"/>
+                        </h:panelGroup>
+
+                        <h:form>
+                            <!--Input Empresa-->
+                            <div class="input-field col s6" >
+                                <h:outputLabel value="#{bundle.CreateExperienciaLaboralLabel_empresa}" for="empresa" />
+                                <h:inputText id="empresa" value="#{experienciaLaboralController.selected.empresa}" onkeypress="return soloLetras(event)" title="#{bundle.CreateExperienciaLaboralTitle_empresa}" required="true" requiredMessage="#{bundle.CreateExperienciaLaboralRequiredMessage_empresa}"/>
+
+                            </div>
+
+                            <!--Input Puesto Ocupado-->
+                            <div class="input-field col s6" >
+                                <h:outputLabel value="#{bundle.CreateExperienciaLaboralLabel_puestoOcupado}" for="puestoOcupado" />
+                                <h:inputText id="puestoOcupado" value="#{experienciaLaboralController.selected.puestoOcupado}" onkeypress="return soloLetras(event)" title="#{bundle.CreateExperienciaLaboralTitle_puestoOcupado}" />
+
+                            </div>
+
+                            <!--Input Fecha Desde Experiencia-->
+                            <div class="input-field col s6" >
+                                <h:outputLabel value="#{bundle.CreateExperienciaLaboralLabel_fechaDesde}" for="fechaDesdeexperiencia" />
+                                <h:inputText id="fechaDesdeexperiencia" class="datepicker"  value="#{experienciaLaboralController.selected.fechaDesde}" title="#{bundle.CreateExperienciaLaboralTitle_fechaDesde}" required="true" requiredMessage="La Fecha Desde debe ser mayor que la Hasta!">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:inputText>
+                                <h:message for="fechaDesdeexperiencia" errorClass="errorMessage" />
+                                <!--
+                                <p:calendar id="fechaDesdeexperiencia"  pattern="MM/dd/yyyy" value="#{experienciaLaboralController.selected.fechaDesde}" />
+                                -->
+
+                            </div>
+
+                            <!--Input Fecha Hasta Experiencia-->
+                            <div class="input-field col s6" >
+                                <h:outputLabel value="#{bundle.CreateExperienciaLaboralLabel_fechaHasta}" for="fechaHastaexperiencia" />
+                                <h:inputText id="fechaHastaexperiencia" class="datepicker" value="#{experienciaLaboralController.selected.fechaHasta}" onfocus="validate()" title="#{bundle.CreateExperienciaLaboralTitle_fechaHasta}" required="true" requiredMessage="La Fecha Desde debe ser mayor que la Hasta!">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:inputText>
+                                <h:message for="fechaHastaexperiencia" errorClass="errorMessage" />
+                                <!--
+                                <p:calendar id="fechaHastaexperiencia"  pattern="MM/dd/yyyy" value="#{experienciaLaboralController.selected.fechaHasta}" />
+                                -->
+
+                            </div>
+
+                            <!--Input Salario-->
+                            <div class="input-field col s6" >
+                                <h:outputLabel value="#{bundle.CreateExperienciaLaboralLabel_salario}" for="salario" />
+                                <h:inputText id="salario" class="input-number-motherfucker" value="#{experienciaLaboralController.selected.salario}" title="#{bundle.CreateExperienciaLaboralTitle_salario}" required="true" requiredMessage="#{bundle.CreateExperienciaLaboralRequiredMessage_salario}"/>
+
+                            </div>
+
+                            <!--Btn Create-->
+                            <div class="input-field col s6" >
+                                <br />
+                                <h:commandLink class="waves-effect waves-light btn" action="#{experienciaLaboralController.create}"  value="Guardar y Finalizar" >
+
+                                </h:commandLink>
+                            </div>
+                        </h:form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Modal Header</h4>
+                <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+        </div>
+
+        <!--Footer del sitio-->
+        <div class="footer">
+            <div class="container">
+                <div class="col-md-3 grid_3">
+                    <h4>Navigacion</h4>
+                    <ul class="f_list f_list1">
+                        <li><a href="index.xhtml">Home</a></li>
+                        <li><a href="login.xhtml">Logearte</a></li>
+                        <li><a href="register.xhtml">Registro</a></li>
+                        <li><a href="about.html">Sobre Nosotros</a></li>
+                    </ul>
+                    <ul class="f_list">
+                        <li><a href="terms.html">Terminos de Uso</a></li>
+                        <li><a href="contact.html">Contactanos</a></li>
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-3 grid_3">
+                    <h4>Lorem ipsum</h4>
+                    <div class="footer-list">
+                        <ul>
+                            <li><p><span class="yellow"><a href="#">Lorem Ipsum</a></span> Lorem Ipsum Lorem Ipsum Lorem Ipsum</p></li>
+                            <li><p><span class="yellow"><a href="#">Lorem Ipsumr</a></span> Lorem Ipsum Lorem Ipsum Lorem Ipsum</p></li>
+                            <li><p><span class="yellow"><a href="#">Lorem Ipsum</a></span> Lorem Ipsum Lorem Ipsum Lorem Ipsum</p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 grid_3">
+                    <h4>More Lorem Ipsum</h4>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                </div>
+                <div class="col-md-3 grid_3">
+                    <h4>Dont send us your email for our newsletter</h4>
+                    <p>We never response to you :)</p>
+                    <form>
+                        <input type="text" class="form-control" placeholder="Enter your email"/>
+                        <button type="button" class="btn red">Subscribe now!</button>
+                    </form>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="footer_bottom">	
+            <div class="container">
+                <div class="col-sm-2">
+                    <ul class="f_list2">
+                        <li><a href="jobs.html">Eduardo Valenzuela</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <ul class="f_list2">
+                        <li><a href="jobs.html">2016-2511</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <ul class="f_list2">
+                        <li><a href="jobs.html">https://github.com/Softx0/</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 footer_text">
+                    <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium numqua"</p>
+                </div>
+                <div class="clearfix"> </div>
+                <div class="copy">
+                    <p>Copyright © 2015 Seeking . All Rights Reserved . Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+                </div>
+            </div>
+        </div>
+        <!--Fin del footer-->
+
+        <!--Script para los tabs horizontales-->
+        <script>
+            $(document).ready(function () {
+                $('.tabs').tabs();
+            });
+        </script>
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <!--Script para los dropdowns-->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var elems = document.querySelectorAll('.dropdown-trigger');
+                var instances = M.Dropdown.init(elems, options);
+            });
+            // Or with jQuery
+
+            $('.dropdown-trigger').dropdown();
+        </script>
+
+        <!--Script para el navbar-->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var elems = document.querySelectorAll('.sidenav');
+                var instances = M.Sidenav.init(elems, options);
+            });
+            // Or with jQuery
+
+            $(document).ready(function () {
+                $('.sidenav').sidenav();
+            });
+        </script>
+
+        <script>
+            $('.input-number-motherfucker').on('input', function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        </script>
+
+        <script>
+            function soloLetras(e) {
+                tecla = (document.all) ? e.keyCode : e.which;
+                //Tecla de retroceso para borrar, siempre la permite
+                if (tecla == 8) {
+                    return true;
+                }
+
+                // Patron de entrada, en este caso solo acepta letras
+                patron = /[ A-Za-z\s]/;
+                tecla_final = String.fromCharCode(tecla);
+                return patron.test(tecla_final);
+            }
+        </script>
+
+        <script>
+
+            // Or with jQuery
+            $(document).ready(function () {
+                $('.datepicker').datepicker({format: "mm/dd/yyyy"});
+            });
+        </script>
+
+        <script>
+
+            let desdeExperiencia = new Date(document.getElementById('fechaDesdeexperiencia').value).getTime();
+            let hastaExperiencia = new Date(document.getElementById('fechaHastaexperiencia').value).getTime();
+
+            if (desdeExperiencia > hastaExperiencia) {
+                alert('la fecha desde debe ser mas pequeñaque la fecha hasta');
+            }
+
+
+            let desdeCapacitacion = new Date(document.getElementById('fechaDesdeCapacitacion').value).getTime();
+            let hastaCapacitacion = new Date(document.getElementById('fechaHastaCapacitacion').value).getTime();
+
+            if (desdeCapacitacion > hastaCapacitacion) {
+                alert('la fecha desde debe ser mas pequeñaque la fecha hasta');
+            }
+
+        </script>
+
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var elems = document.querySelectorAll('.modal');
+                var instances = M.Modal.init(elems, options);
+            });
+
+            // Or with jQuery
+
+            $(document).ready(function () {
+                $('.modal').modal();
+            });
+
+
+
+        </script>
+    </h:body>
+</html>
+

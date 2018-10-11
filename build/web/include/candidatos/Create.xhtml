@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCandidatosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                 
+                    <h:outputLabel value="#{bundle.CreateCandidatosLabel_cedula}" for="cedula" />
+                    <h:inputText id="cedula" value="#{candidatosController.selected.cedula}" title="#{bundle.CreateCandidatosTitle_cedula}" required="true" requiredMessage="#{bundle.CreateCandidatosRequiredMessage_cedula}"/>
+                    
+                    <h:outputLabel value="#{bundle.CreateCandidatosLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{candidatosController.selected.nombre}" title="#{bundle.CreateCandidatosTitle_nombre}" required="true" requiredMessage="#{bundle.CreateCandidatosRequiredMessage_nombre}"/>
+                   
+                    <h:outputLabel value="#{bundle.CreateCandidatosLabel_salarioAspira}" for="salarioAspira" />
+                    <h:inputText id="salarioAspira" value="#{candidatosController.selected.salarioAspira}" title="#{bundle.CreateCandidatosTitle_salarioAspira}" required="true" requiredMessage="#{bundle.CreateCandidatosRequiredMessage_salarioAspira}"/>
+                   
+                    
+                    <h:outputLabel value="#{bundle.CreateCandidatosLabel_recomendadoPor}" for="recomendadoPor" />
+                    <h:inputText id="recomendadoPor" value="#{candidatosController.selected.recomendadoPor}" title="#{bundle.CreateCandidatosTitle_recomendadoPor}" />
+                    
+                    
+                    <h:outputLabel value="#{bundle.CreateCandidatosLabel_puestoAspira}" for="puestoAspira" />
+                    <h:selectOneMenu id="puestoAspira" value="#{candidatosController.selected.puestoAspira}" title="#{bundle.CreateCandidatosTitle_puestoAspira}" >
+                        <f:selectItems value="#{puestosController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    
+                    <h:outputLabel value="#{bundle.CreateCandidatosLabel_competencias}" for="competencias" />
+                    <h:selectOneMenu id="competencias" value="#{candidatosController.selected.competencias}" title="#{bundle.CreateCandidatosTitle_competencias}" >
+                        <f:selectItems value="#{competenciasController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    
+                    <h:outputLabel value="#{bundle.CreateCandidatosLabel_capacitaciones}" for="capacitaciones" />
+                    <h:selectOneMenu id="capacitaciones" value="#{candidatosController.selected.capacitaciones}" title="#{bundle.CreateCandidatosTitle_capacitaciones}" >
+                        <f:selectItems value="#{capacitacionesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    
+                    <h:outputLabel value="#{bundle.CreateCandidatosLabel_idiomas}" for="idiomas" />
+                    <h:selectOneMenu id="idiomas" value="#{candidatosController.selected.idiomas}" title="#{bundle.CreateCandidatosTitle_idiomas}" >
+                        <f:selectItems value="#{idiomasController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    
+                    <h:outputLabel value="#{bundle.CreateCandidatosLabel_experienciaLaboral}" for="experienciaLaboral" />
+                    <h:selectOneMenu id="experienciaLaboral" value="#{candidatosController.selected.experienciaLaboral}" title="#{bundle.CreateCandidatosTitle_experienciaLaboral}" >
+                        <f:selectItems value="#{experienciaLaboralController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateCandidatosLabel_estadoCandidato}" for="estadoCandidato" />
+                    <h:selectOneMenu id="estadoCandidato" value="#{candidatosController.selected.estadoCandidato}" title="#{bundle.CreateCandidatosTitle_estadoCandidato}" >
+                        <f:selectItems value="#{estadoCandidatoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{candidatosController.create}" value="#{bundle.CreateCandidatosSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{candidatosController.prepareList}" value="#{bundle.CreateCandidatosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateCandidatosIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
